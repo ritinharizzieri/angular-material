@@ -12,9 +12,11 @@ export class AppComponent {
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngAfterContentInit(): void {
+    // Esse observe esta analisando o tempo todo o tamanho da tela
     this.breakpointObserver.observe(['(max-width: 800px)']).subscribe({
       next:(res) =>{
         if(res.matches){
+          // quando for menor que 800 o tamanho da tela então vai executar essa ação
           this.sidenav.mode = 'over';
           this.sidenav.close();
         } else {
