@@ -8,23 +8,19 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild(MatSidenav) sidenav!: MatSidenav
+  public isSmallScreen:boolean = false;
+
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngAfterContentInit(): void {
     // Esse observe esta analisando o tempo todo o tamanho da tela
-    this.breakpointObserver.observe(['(max-width: 800px)']).subscribe({
-      next:(res) =>{
-        if(res.matches){
-          // quando for menor que 800 o tamanho da tela então vai executar essa ação
-          this.sidenav.mode = 'over';
-          this.sidenav.close();
-        } else {
-          this.sidenav.mode = 'side';
-          this.sidenav.open();
-        }
-      }
-    })
+    this.breakpointObserver.observe(['(max-width: 800px)'])
+    // quando tem apenas uma função no next e ela já vai fazer tudo que precisa fazer, dai não precisa usar o next.
+    .subscribe((res) => this.isSmallScreen = res.matches)
+  }
+
+  get sidenavMode(){
+    return this.isSmallScreen ? 'over': 'side'
   }
 
 

@@ -3,8 +3,8 @@
   <mat-sidenav
     class="sidenav"
     #sidenav
-    mode="push"
-    opened
+    [mode]="sidenavMode"
+    [opened]="isSmallScreen"
     [fixedInViewport]="true"
     >
   </mat-sidenav>
