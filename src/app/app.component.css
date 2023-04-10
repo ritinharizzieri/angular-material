@@ -14,6 +14,10 @@ mat-sidenav-container{
   height: 100vh;
 }
 
+.title {
+  height: 500px;
+}
+
 .toolbar-menu {
   position: fixed;
   font-size: 1rem;
@@ -24,4 +28,8 @@ mat-sidenav-container{
   height: 100px;
   font-size: 2rem;
   margin-top: 60px;
+}
+
+.toolbar-menu__shadow {
+  box-shadow: 0px 5px 5px #666;
 }
