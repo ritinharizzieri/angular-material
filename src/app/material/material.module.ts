@@ -4,6 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -11,7 +13,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatInputModule
+  ],
+  // configuração esta global, dessa forma todos as props do mat-form-field seguem o mesmo padrão
+  providers:[
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue:{ appearance: 'outline', floatLabel: 'always'}
+    }
   ]
 })
 export class MaterialModule { }
