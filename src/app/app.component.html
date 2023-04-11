@@ -7,6 +7,13 @@
     [opened]="!isSmallScreen"
     [fixedInViewport]="true"
     >
+    <mat-toolbar color="primary">
+      Smart Examples
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/buttonIcon">Button Icon</a>
+      <a mat-list-item routerLink="/formFieldInput">Form Field Input</a>
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -31,7 +38,8 @@
       <span *ngIf="!popText">My App</span>
     </mat-toolbar>
     <!--<app-buttons-icons></app-buttons-icons>-->
-    <app-form-field-input></app-form-field-input>
+    <!--<app-form-field-input></app-form-field-input>-->
+    <router-outlet></router-outlet>
 
   </mat-sidenav-content>
 
