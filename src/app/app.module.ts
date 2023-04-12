@@ -9,12 +9,14 @@ import { ButtonsIconsComponent } from './buttons-icons/buttons-icons.component';
 import { FormFieldInputComponent } from './form-field-input/form-field-input.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonsIconsComponent,
-    FormFieldInputComponent
+    FormFieldInputComponent,
+    ProgressSpinnerComponent
    ],
   imports: [
     FormsModule,
