@@ -7,6 +7,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -17,6 +19,8 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatInputModule,
     MatListModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   // configuração esta global, dessa forma todos as props do mat-form-field seguem o mesmo padrão
   providers:[
