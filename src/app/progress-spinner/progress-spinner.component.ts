@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {interval, map, takeWhile} from 'rxjs'
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {first, interval, map, takeWhile, timer} from 'rxjs'
+import {ProgressBarMode} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-progress-spinner',
@@ -8,26 +9,41 @@ import {interval, map, takeWhile} from 'rxjs'
 })
 export class ProgressSpinnerComponent implements OnInit {
 
+  modeDesafio:ProgressBarMode = 'query';
+
   public loadingPercent = 0;
+  public loadingPercentDesafio = 0;
 
   constructor() { }
 
   ngOnInit():void {
-    this.loadingProgress(500).subscribe(i => this.loadingPercent = i)
+    this.timerMode();
+
+    this.loadingProgress(500, 90).subscribe(i => this.loadingPercent = i)
   }
 
 
   // funcao que altera o valor do loadingPercent
-  loadingProgress(speed: number){
-    /**
-     * interval() - uma funcao do rxjs que é tipo o setTimeout.
-     * takeWhile() - para se desinscrever assimq que o i, for menor ou igual a 100.
-     * Quando chegar a 100 deve se desinscrever do observable
-     */
-
+  loadingProgress(speed: number, limit: number){
     return interval(speed).pipe(
       map(i => i * 5),
-      takeWhile(i => i <= 100)
+      takeWhile(i => i <= limit)
     )
+  }
+
+  timerMode(){
+
+    timer(2000).pipe(first()).subscribe(() => {
+      this.changeMode('determinate');
+
+      this.loadingProgress(500,100).subscribe((i) => {
+        return this.loadingPercentDesafio = i
+      });
+    });
+  }
+
+
+  changeMode(mode:ProgressBarMode) {
+    this.modeDesafio = mode
   }
 }
