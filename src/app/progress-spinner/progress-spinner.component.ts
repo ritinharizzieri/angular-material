@@ -14,7 +14,7 @@ export class ProgressSpinnerComponent implements OnInit {
   public queryValue = 0;
 
   public bufferValue = 0;
-  public animationEnd: ProgressBarMode = 'buffer'
+  public modePlayback: ProgressBarMode = 'buffer'
   public valueTwo = 0
 
   constructor() { }
@@ -37,8 +37,9 @@ export class ProgressSpinnerComponent implements OnInit {
     interval(5000)
       .pipe(
         take(1),
-        tap(_ => (this.animationEnd = 'determinate'))
-      ),this.loadingProgress(500,100).subscribe(i => this.valueTwo = i)
+        tap(_ => (this.modePlayback = 'determinate'))
+      ),this.loadingProgress(500,100)
+      .subscribe(i => this.valueTwo = i)
   }
 
 
