@@ -12,11 +12,14 @@ export class ProgressSpinnerComponent implements OnInit {
   public loadingPercent = 0;
   public queryMode: ProgressBarMode = 'query';
   public queryValue = 0;
+  public currentPlayback = 0;
 
   constructor() { }
 
   ngOnInit():void {
-    this.loadingProgress(500, 95).subscribe(i => this.loadingPercent = i)
+    this.loadingProgress(500, 100).subscribe(i => this.loadingPercent = i)
+
+    this.loadingProgress(350, 100).subscribe(i => this.currentPlayback = i)
 
     concat(
       interval(2000)
