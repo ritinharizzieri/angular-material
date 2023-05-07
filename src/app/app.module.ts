@@ -10,13 +10,15 @@ import { FormFieldInputComponent } from './form-field-input/form-field-input.com
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     ButtonsIconsComponent,
     FormFieldInputComponent,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
+      TabsComponent
    ],
   imports: [
     FormsModule,
