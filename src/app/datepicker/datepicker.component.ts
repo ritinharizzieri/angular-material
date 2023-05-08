@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Platform} from '@angular/cdk/platform'
 
 @Component({
   selector: 'app-datepicker',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatepickerComponent implements OnInit {
 
-  constructor() { }
+  public startDate = new Date(2023, 4, 8);
+  public minDate = new Date(2023, 4, 8)
+  public maxDate = new Date(2023, 6, 8)
+
+  constructor(private platform: Platform) { }
 
   ngOnInit() {
+  }
+
+  get isTouchedDevice(){
+    return this.platform.ANDROID || this.platform.IOS
   }
 
 }
