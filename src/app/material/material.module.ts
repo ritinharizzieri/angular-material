@@ -13,6 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core'
 import {MAT_DATE_LOCALE} from '@angular/material/core'
+import {MatMomentDateModule} from '@angular/material-moment-adapter'
 
 @NgModule({
   declarations: [],
@@ -27,7 +28,8 @@ import {MAT_DATE_LOCALE} from '@angular/material/core'
     MatProgressSpinnerModule,
     MatTabsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatMomentDateModule
   ],
   // configuração esta global, dessa forma todos as props do mat-form-field seguem o mesmo padrão
   providers:[
