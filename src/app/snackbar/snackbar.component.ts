@@ -32,7 +32,10 @@ export class SnackbarComponent {
   // Existe a possibilidade de colocar varias coisas além de uma mensagem de texto
   public openFromComp() {
     this.snackbar.openFromComponent(SnackbarMsnComponent, {
-      data: 'Hello people'
+      data: 'Hello people',
+      duration: 2500,
+      horizontalPosition: 'end',
+      verticalPosition: 'top'
     })
   }
 
