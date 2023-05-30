@@ -9,7 +9,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SnackbarComponent implements OnInit {
  constructor(private snackbar: MatSnackBar){}
 
- ngOnInit(){
-    this.snackbar.open('hello', 'close')
- }
+ ngOnInit(){}
+
+public openSnackBar() {
+  const snackbar = this.snackbar.open('hello', 'Fechar', {
+    duration: 2000
+  })
+
+  snackbar.afterDismissed().subscribe(_ => {
+    console.log('dismissed')
+  })
+}
+
+
 }
