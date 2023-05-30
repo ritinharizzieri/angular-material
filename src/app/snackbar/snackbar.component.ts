@@ -16,8 +16,16 @@ public openSnackBar() {
     duration: 2000
   })
 
+  // quando desaparecer ou fechar o snackbar irá aparecer o 'dismissed'
+  // afterDismissed -> é quando você fechou o snackbar, e não importa necessariamente se ele foi fechado pelo usuario ou pelo timer.
   snackbar.afterDismissed().subscribe(_ => {
     console.log('dismissed')
+  })
+
+
+  // onAction -> é quando precisa saber sobre uma interação do usuario. Nesse caso quando o usuario clicar em fechar será disparado esse console.
+  snackbar.onAction().subscribe(_ => {
+    console.log('After action')
   })
 }
 
