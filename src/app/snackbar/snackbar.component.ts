@@ -33,9 +33,9 @@ export class SnackbarComponent {
   public openFromComp() {
     this.snackbar.openFromComponent(SnackbarMsnComponent, {
       data: 'Hello people',
-      duration: 2500,
-      horizontalPosition: 'end',
-      verticalPosition: 'top'
+      duration: 250000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
     })
   }
 

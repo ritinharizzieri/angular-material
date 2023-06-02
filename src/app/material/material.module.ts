@@ -14,7 +14,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core'
 import {MAT_DATE_LOCALE} from '@angular/material/core'
 import {MatMomentDateModule} from '@angular/material-moment-adapter'
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [],
@@ -42,6 +42,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     {
       provide: MAT_DATE_LOCALE,
       useValue: 'pt-br'
+    },
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: {
+        duration: 2500,
+        horizontalPosition: 'end',
+        verticalPosition: 'top'
+      }
     }
   ]
 })

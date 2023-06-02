@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
+import {MatSnackBarRef, MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-snackbar-msn',
@@ -9,6 +9,13 @@ import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 export class SnackbarMsnComponent {
 
   constructor(
-    @Inject(MAT_SNACK_BAR_DATA) public data: string
+    @Inject(MAT_SNACK_BAR_DATA) public data: string,
+    public matSnackBarRef: MatSnackBarRef<SnackbarMsnComponent>
   ) { }
+
+  public closeSnackbar(){
+    this.matSnackBarRef.dismiss();
+  }
+
+
 }
