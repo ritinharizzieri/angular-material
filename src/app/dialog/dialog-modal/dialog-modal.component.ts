@@ -15,6 +15,6 @@ export class DialogModalComponent {
 
   // exemplo de metodo para fechar dialog
   public closeDialog(){
-    this.matDialogRef.close()
+    this.matDialogRef.close('Returned for method')
   }
 }
