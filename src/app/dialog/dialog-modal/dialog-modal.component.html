@@ -1,10 +1,16 @@
-<p>dialog-modal works!</p>
-<button mat-button (click)="closeDialog()">
-  <mat-icon>close</mat-icon>
-  Fechar
-</button>
+<h1 mat-dialog-title>Hi {{data}}</h1>
+<mat-dialog-content>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut pariatur, blanditiis libero molestias consectetur ipsam dignissimos esse nostrum numquam cupiditate nihil doloremque in molestiae non iusto quia ducimus quisquam sequi.</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+    Fechar
+  </button>
 
-<button mat-button color="warn" [mat-dialog-close]="">
-  <mat-icon>close</mat-icon>
-  Fechar
-</button>
+  <!-- não precisa usar metodo de fechar dialog, basta usar [mat-dialog-close] -->
+  <button mat-button color="warn" [mat-dialog-close]>
+    <mat-icon>close</mat-icon>
+    Fechar
+  </button>
+</mat-dialog-actions>

@@ -12,7 +12,11 @@ export class DialogComponent {
   constructor(private dialog: MatDialog){}
 
   public openDialog(){
-    this.dialog.open(DialogModalComponent)
+    this.dialog.open(DialogModalComponent, {
+      data: 'Bazinga',
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms'
+    })
   }
 
 }
