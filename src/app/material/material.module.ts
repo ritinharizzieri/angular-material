@@ -17,6 +17,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter'
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [],
@@ -35,7 +37,9 @@ import { MatTableModule } from '@angular/material/table';
     MatMomentDateModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   // configuração esta global, dessa forma todos as props do mat-form-field seguem o mesmo padrão
   providers:[

@@ -8,4 +8,5 @@ import { DATA_MOVIES } from './model/data-movies';
 })
 export class DatatableComponent {
   public dataSource = DATA_MOVIES
+  public displayedNameColumns: string[] = ['name', 'category', 'rating', 'year', 'director']
 }
